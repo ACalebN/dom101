@@ -63,10 +63,5 @@ function findElementsByQuery(query) {
 }
 
 function reverseList(query) {
-    const elements = document.querySelectorAll(query)
-    let reverse = []
-    for (let i = 0; i = elements.length; i++) {
-        reverse.push(elements[elements.length - i])
-    }
-    return reverse
+    
 }
