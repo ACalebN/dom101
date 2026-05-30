@@ -38,6 +38,35 @@ function setClass(elem, str) {
 }
 
 function addAClass(elem, str) {
-    
+    elem.classList.add(str)
     return elem
+}
+
+function removeAClass(elem, str) {
+    elem.classList.remove(str)
+    return elem
+}
+
+function newElement(name) {
+    let elem = document.createElement(name)
+    return elem
+}
+
+function findElementById(id) {
+    let elem = document.getElementById(id)
+    return elem
+}
+
+function findElementsByQuery(query) {
+    let elem = document.querySelectorAll(query)
+    return elem
+}
+
+function reverseList(query) {
+    const elements = document.querySelectorAll(query)
+    let reverse = []
+    for (let i = 0; i = elements.length; i++) {
+        reverse.push(elements[elements.length - i])
+    }
+    return reverse
 }
