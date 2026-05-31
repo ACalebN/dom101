@@ -63,5 +63,53 @@ function findElementsByQuery(query) {
 }
 
 function reverseList(query) {
+    let list = document.querySelector(query);
+    if (list) {
+        let items = Array.from(list.children);
+        items.reverse().forEach(item => list.appendChild(item));
+    }
+    return list;
+}
+
+function mover(moveThis, appendToThis) {
+    let move = document.querySelector(moveThis)
+    let toThis = document.querySelector(appendToThis)
+
+    toThis.appendChild(move)
+}
+
+function filler(list, candidates) {
+    candidates.forEach(elem => {
+        const listItem = document.createElement('li')
+        listItem.textContent = elem
+        list.appendChild(listItem)
+    })
+}
+
+function dupe(selector) {
+    let elem = document.querySelector(selector)
+    if (elem) {
+        let elem2 = elem.cloneNode(true)
+        elem.parentElement.appendChild(elem2)
+    }
+}
+
+function removeAll(selector) {
+    let elements = document.querySelectorAll(selector)
+    elements.forEach(elem => {
+        elem.remove()
+    })
+}
+
+function getUserData() {
+    let username = document.querySelector('#username').value;
+    let speed = document.querySelector('#speed').value;
+    let student = document.querySelector('#student').checked; // Assuming this is a checkbox
     
+    const userdata = {
+        name: username,
+        speed: parseInt(speed),
+        student: student
+    };
+    return userdata;
 }
